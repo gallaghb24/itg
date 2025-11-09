@@ -102,10 +102,15 @@ p {
 }
 
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--dark);
-    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo img {
+    height: 36px;
+    width: auto;
+    display: block;
 }
 
 .nav-links {
@@ -196,6 +201,45 @@ p {
     max-width: 900px;
     text-align: center;
     padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(31, 41, 55, 0.15);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    transition: var(--transition);
+    z-index: 1;
+    animation: bounce 2s infinite;
+}
+
+.hero-scroll svg {
+    width: 24px;
+    height: 24px;
+}
+
+.hero-scroll:hover,
+.hero-scroll:focus {
+    color: var(--coral);
+    border-color: rgba(255, 107, 107, 0.3);
+    transform: translateX(-50%) translateY(4px);
+    animation: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+    40% { transform: translate(-50%, -6px); }
+    60% { transform: translate(-50%, -3px); }
 }
 
 .hero-title {
